@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="Raylib_project01/Raylib_project01.vcxproj" />
+  <Project Path="Raylib_project01/Raylib_project01.vcxproj" Id="c4a7b7ae-d8ec-4430-a47c-f5891c74aae2" />
 </Solution>

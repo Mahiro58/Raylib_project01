@@ -1,58 +1,31 @@
 #include "raylib.h"
+#include "Otter.h"
 
 int main()
 {
     const int screenWidth = 800;
-    const int screenHeight = 450;
+    const int screenHeight = 800;
 
-    InitWindow(screenWidth, screenHeight, "Player Movement");
+    InitWindow(screenWidth, screenHeight, "Borred Packman");
 
     SetTargetFPS(60);
 
-    float playerX = 400;
-    float playerY = 225;
-
-    float speed = 200.0f;
-
+    Otter otter;
+    Rectangle obstacle = Rectangle(600, 200, 200, 175);
     while (!WindowShouldClose())
     {
         float deltaTime = GetFrameTime();
 
-        // UPDATE
-
-        if (IsKeyDown(KEY_W))
-        {
-            playerY -= speed * deltaTime;
-        }
-
-        if (IsKeyDown(KEY_S))
-        {
-            playerY += speed * deltaTime;
-        }
-
-        if (IsKeyDown(KEY_A))
-        {
-            playerX -= speed * deltaTime;
-        }
-
-        if (IsKeyDown(KEY_D))
-        {
-            playerX += speed * deltaTime;
-        }
-
-
-        // DRAW
+        otter.Update(deltaTime);
+        bool isColliding = CheckCollisionRecs(otter.GetRect(), obstacle);
 
         BeginDrawing();
 
         ClearBackground(RAYWHITE);
+        DrawRectangleLinesEx(obstacle, 5, BLACK);
+        otter.Draw();
 
-        DrawCircle(
-            static_cast<int>(playerX),
-            static_cast<int>(playerY),
-            25,
-            BLUE
-        );
+        otter.DrawHitbox(isColliding);
 
         EndDrawing();
     }
