@@ -4,11 +4,21 @@
 Otter::Otter() 
 {
 	image_borred = LoadTexture("images/borred_otter.png");
-	player_position.x = 200.0f;
-	player_position.y = 200.0f;
+	player_position.x = 300.0f;
+	player_position.y = 300.0f;
 	otter_speed = 200.0f;
     sourceRec = { 0.0f, 0.0f, (float)image_borred.width, (float)image_borred.height };
     destRec = { player_position.x, player_position.y, 100.0f, 100.0f };
+}
+
+Vector2 Otter::GetPosition()
+{
+    return player_position;
+}
+
+void Otter::SetPosition(Vector2 position)
+{
+    player_position = position;
 }
 
 Otter::~Otter()

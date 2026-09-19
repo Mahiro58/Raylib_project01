@@ -9,6 +9,8 @@ public:
 	void Update(float deltaTime);
 	Rectangle GetRect();
 	void DrawHitbox(bool isColliding);
+	Vector2 GetPosition();
+	void SetPosition(Vector2 position);
 
 private: 
 	Texture2D image_borred;
