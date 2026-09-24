@@ -142,11 +142,13 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Fish.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Otter.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Fish.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Otter.h" />
   </ItemGroup>
