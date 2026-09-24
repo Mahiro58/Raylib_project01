@@ -13,6 +13,7 @@ int main()
     SetTargetFPS(60);
 
     Otter otter;
+    Fish fish;
     Map map;
     Rectangle obstacle = Rectangle(600, 200, 100, 10);
 
@@ -38,7 +39,7 @@ int main()
             otter.SetPosition(oldPosition);
         }
 
-        bool isColliding = CheckCollisionRecs(otter.GetRect(), obstacle);
+        bool isColliding = CheckCollisionRecs(fish.GetRect(), otter.GetRect());
 
         camera.target = otter.GetPosition();
 
@@ -50,8 +51,10 @@ int main()
 
         //DrawRectangleLinesEx(obstacle, 5, BLACK);
         otter.Draw();
+        fish.Draw();
 
         otter.DrawHitbox(isColliding);
+        fish.FishHitbox(isColliding);
 
         EndMode2D();
         EndDrawing();
