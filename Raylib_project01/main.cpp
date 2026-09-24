@@ -1,6 +1,7 @@
 #include "raylib.h"
 #include "Otter.h"
 #include "Map.h"
+#include "Fish.h"
 
 int main()
 {
