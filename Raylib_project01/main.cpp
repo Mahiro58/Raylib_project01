@@ -26,6 +26,9 @@ int main()
     };
     camera.rotation = 0.0f;
     camera.zoom = 1.0f;
+
+    Texture2D background = LoadTexture("images/backgroundtest.jpg");
+
     while (!WindowShouldClose())
     {
         float deltaTime = GetFrameTime();
@@ -45,6 +48,7 @@ int main()
 
         BeginDrawing();
         ClearBackground(RAYWHITE);
+        DrawTexture(background, 0, 0, WHITE);
 
         BeginMode2D(camera);
         map.Draw();
@@ -59,6 +63,8 @@ int main()
         EndMode2D();
         EndDrawing();
     }
+
+    UnloadTexture(background);
 
     CloseWindow();
 
