@@ -53,6 +53,7 @@ int main()
         BeginMode2D(camera);
         map.Draw();
 
+        //test
         //DrawRectangleLinesEx(obstacle, 5, BLACK);
         otter.Draw();
         fish.Draw();
